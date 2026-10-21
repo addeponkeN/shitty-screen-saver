@@ -1,0 +1,106 @@
+<Window x:Class="Matriosk.DevPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Matriosk tuning"
+        Width="372" Height="820"
+        MinWidth="330" MinHeight="420"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False"
+        Background="#0B1218"
+        Foreground="#BFE6F6"
+        FontFamily="Consolas"
+        FontSize="11"
+        TextOptions.TextFormattingMode="Display">
+    <Window.Resources>
+        <Style x:Key="DarkCombo" TargetType="ComboBox">
+            <Setter Property="Background" Value="#12202A" />
+            <Setter Property="Foreground" Value="#EAF7FF" />
+            <Setter Property="BorderBrush" Value="#2A4452" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton Focusable="False" ClickMode="Press"
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border Background="#12202A" BorderBrush="#2A4452" BorderThickness="1" CornerRadius="2">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="16" />
+                                                </Grid.ColumnDefinitions>
+                                                <ContentPresenter Grid.Column="0" Margin="5,2,0,2" VerticalAlignment="Center"
+                                                                  Content="{Binding SelectionBoxItem, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                                                  TextElement.Foreground="#EAF7FF" />
+                                                <Path Grid.Column="1" Data="M 0 0 L 4 4 L 8 0 Z" Fill="#9FD8EF"
+                                                      HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" AllowsTransparency="True" Focusable="False">
+                                <Border Background="#0B1218" BorderBrush="#2A4452" BorderThickness="1"
+                                        MinWidth="{TemplateBinding ActualWidth}" MaxHeight="260">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <ItemsPresenter />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="MATRIOSK" FontWeight="Bold" Foreground="#EAF7FF" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="StatsText" HorizontalAlignment="Right" Margin="8,0"
+                       Foreground="#6F97AD" FontSize="10" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="CloseButton" Content="×"
+                    Width="22" Height="20" Padding="0" FontSize="14"
+                    Background="#12202A" Foreground="#9FD8EF" BorderBrush="#2A4452"
+                    Click="OnCloseClick" />
+        </Grid>
+
+        <WrapPanel x:Name="PresetPanel" Grid.Row="1" Margin="0,0,0,6" />
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="SectionPanel" />
+        </ScrollViewer>
+
+        <Grid Grid.Row="3" Margin="0,6,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Copy JSON" Margin="0,0,4,0"
+                    Padding="6,3" Background="#12202A" Foreground="#9FD8EF" BorderBrush="#2A4452"
+                    Click="OnCopyClick" />
+            <Button Grid.Column="1" Content="Save" Margin="0,0,4,0"
+                    Padding="6,3" Background="#12202A" Foreground="#EAF7FF" BorderBrush="#3A6070"
+                    Click="OnSaveClick" />
+            <Button Grid.Column="2" Content="Reset"
+                    Padding="6,3" Background="#12202A" Foreground="#9FD8EF" BorderBrush="#2A4452"
+                    Click="OnResetClick" />
+            <TextBlock Grid.Column="3" x:Name="StatusText" Margin="8,0,0,0"
+                       Foreground="#6F97AD" FontSize="10" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Window>

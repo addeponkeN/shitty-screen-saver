@@ -1,0 +1,6 @@
+bin/
+obj/
+*.user
+.vs/
+*.local
+_ignore/

@@ -1,0 +1,103 @@
+{
+  "text": "TEST",
+  "charset": "ascii",
+  "font": "Consolas",
+  "fps": 30,
+  "fadeIn": 5,
+  "screensaver": false,
+  "cell": {
+    "w": 12,
+    "h": 12,
+    "fontScale": 0.9954178,
+    "fontWeight": 390.02695,
+    "maxCells": 10000
+  },
+  "churnBuckets": 100,
+  "rain": {
+    "perSecond": [
+      41.297935,
+      68.908554
+    ],
+    "speed": [
+      6,
+      25.696165
+    ],
+    "trail": [
+      86.27434,
+      100
+    ],
+    "trailDecay": [
+      5.5893807,
+      5.7262535
+    ],
+    "size": [
+      0.4,
+      0.9781711
+    ],
+    "glow": [
+      0.4,
+      1.0112095
+    ],
+    "strength": [
+      0.19469027,
+      0.96460176
+    ],
+    "max": 400,
+    "glowTextOnly": false
+  },
+  "ripple": {
+    "speed": [
+      1,
+      10.9760475
+    ],
+    "life": [
+      0.1,
+      1.4182634
+    ],
+    "width": [
+      1.9955752,
+      4.181416
+    ],
+    "strength": [
+      0.15929204,
+      0.32743362
+    ],
+    "noise": 0.4,
+    "scale": 0.14,
+    "field": 0.35,
+    "max": 10
+  },
+  "energy": {
+    "decay": 0.9839534,
+    "dimCeiling": 0.100724176,
+    "brightThreshold": 0.3642857,
+    "minVisible": 0.078809366
+  },
+  "noise": {
+    "amount": 0.70543534,
+    "scale": 0.040175308,
+    "speed": 0.25,
+    "drift": -5,
+    "roughness": 0.45
+  },
+  "textMask": {
+    "heightCells": 121.01804,
+    "fontWeight": 400,
+    "spacing": 2,
+    "floor": 0,
+    "gain": 0,
+    "noiseGain": 3.0116014,
+    "decay": 0.5,
+    "dilate": 1,
+    "threshold": 0.008310249
+  },
+  "colors": {
+    "background": "#05070a",
+    "dim": "#7aa2b8",
+    "hot": "#64b0d9",
+    "glow": 1
+  },
+  "randomize": {
+    "seconds": 0
+  }
+}

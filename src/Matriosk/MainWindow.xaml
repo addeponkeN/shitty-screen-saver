@@ -1,0 +1,28 @@
+<Window x:Class="Matriosk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Matriosk"
+        Width="1280" Height="800"
+        Background="#05070A"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True">
+    <Grid x:Name="Root">
+        <Image x:Name="Field"
+               Stretch="None"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               RenderOptions.BitmapScalingMode="NearestNeighbor" />
+        <TextBlock x:Name="Stats"
+                   Margin="12"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontFamily="Consolas"
+                   FontSize="11"
+                   Foreground="#9FD8EF"
+                   Background="#AA000000"
+                   Padding="6,4"
+                   Visibility="Collapsed"
+                   TextOptions.TextFormattingMode="Display" />
+    </Grid>
+</Window>

@@ -1,0 +1,70 @@
+{
+  "text": "HELLO",
+  "charset": "ascii",
+  "font": "Consolas",
+  "fps": 30,
+  "fadeIn": 5,
+  "screensaver": false,
+  "cell": {
+    "w": 7,
+    "h": 12,
+    "fontScale": 1,
+    "fontWeight": 500,
+    "maxCells": 30000
+  },
+  "churnBuckets": 20,
+  "rain": {
+    "perSecond": 6,
+    "speed": 26,
+    "trail": 18,
+    "trailDecay": 1.2,
+    "size": 2,
+    "glow": 4,
+    "glowTextOnly": true,
+    "strength": 0.9,
+    "max": 40
+  },
+  "ripple": {
+    "speed": 12,
+    "life": 1.4,
+    "width": 3,
+    "strength": 1,
+    "noise": 0.4,
+    "scale": 0.14,
+    "field": 0.35,
+    "max": 10
+  },
+  "energy": {
+    "decay": 0.94,
+    "dimCeiling": 0.3,
+    "brightThreshold": 0.45,
+    "minVisible": 0.15
+  },
+  "noise": {
+    "amount": 0.35,
+    "scale": 0.05,
+    "speed": 0.25,
+    "drift": 2.5,
+    "roughness": 0.45
+  },
+  "textMask": {
+    "heightCells": 32,
+    "fontWeight": 400,
+    "spacing": 2,
+    "floor": 0,
+    "gain": 0,
+    "noiseGain": 0.5,
+    "decay": 0.99,
+    "dilate": 0,
+    "threshold": 0.1
+  },
+  "colors": {
+    "background": "#05070a",
+    "dim": "#7aa2b8",
+    "hot": "#ffffff",
+    "glow": 1.1
+  },
+  "randomize": {
+    "seconds": 8
+  }
+}
